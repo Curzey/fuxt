@@ -11,9 +11,6 @@
             :image="page.featuredImage"
         />
 
-        <h2>Foo</h2>
-        <h3>bar</h3>
-
         <wp-content :html="page.content" />
     </section>
 </template>
