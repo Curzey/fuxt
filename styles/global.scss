@@ -1,13 +1,21 @@
 // CSS vars
 :root {
-    --color-white: #ffffff;
     --color-black: #000000;
+    --color-white: #ffffff;
+    --color-grey: #333333;
+    --color-orange: #ffb762;
+    --color-pink: #f7aea8;
+    --color-red: #f96447;
+    --color-yellow: #f6d790;
+    --color-footer-background: #f7aea8;
+    --color-footer-text: #f96447;
 
     --unit-100vh: 100vh;
-    //--unit-gap: 40px;
+    --unit-gutter: 50px;
+    --unit-max-width: 1800px;
 
-    // --font-primary: "Favorit", sans-serif;
-    // --font-secondary: "Druk Wide", sans-serif;
+    --font-primary: "Favorit", sans-serif;
+    --font-secondary: "Druk Wide", sans-serif;
 }
 
 // Globals

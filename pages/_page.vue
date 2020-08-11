@@ -11,6 +11,9 @@
             :image="page.featuredImage"
         />
 
+        <h2>Foo</h2>
+        <h3>bar</h3>
+
         <wp-content :html="page.content" />
     </section>
 </template>
@@ -24,9 +27,15 @@ import { getStripped } from "~/utils/tools"
 import HOME from "~/gql/queries/Home"
 
 export default {
+    async fetch() {
+        const data = await this.$graphql.request(HOME, {
+            uri: this.path,
+        })
+        this.page = _get(data, "nodeByUri", {})
+    },
     data() {
         return {
-            page: {}
+            page: {},
         }
     },
     computed: {
@@ -40,14 +49,8 @@ export default {
                 path = "/featured"
             }
             return path
-        }
+        },
     },
-    async fetch() {
-        const data = await this.$graphql.request(HOME, {
-            uri: this.path
-        })
-        this.page = _get(data, "nodeByUri", {})
-    }
 }
 </script>
 
@@ -61,6 +64,16 @@ export default {
     .image {
         max-width: 50%;
         margin: 0 auto;
+    }
+
+    h2 {
+        font-family: var(--font-primary);
+        font-size: 36px;
+    }
+
+    h3 {
+        font-family: var(--font-secondary);
+        font-size: 32px;
     }
 
     // Hover states

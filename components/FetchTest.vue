@@ -35,7 +35,8 @@ export default {
 <style lang="scss" scoped>
 .fetch-test {
     h2 {
-        // font-family: var(--font-secondary);
+        font-family: var(--font-secondary);
+        color: var(--color-orange);
     }
 }
 </style>
