@@ -60,8 +60,8 @@
 /* Favorit */
 @font-face {
     font-family: "Favorit";
-    src: url("/fonts/FavoritStd-Regualr.woff2") format("woff2"),
-        url("/fonts/FavoritStd-Regualr.woff") format("woff");
+    src: url("/fonts/FavoritStd-Regular.woff2") format("woff2"),
+        url("/fonts/FavoritStd-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
 }
