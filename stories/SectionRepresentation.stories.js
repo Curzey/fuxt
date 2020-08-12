@@ -1,4 +1,4 @@
-import SectionRepresentation from "@/components/contact/SectionRepresentation"
+import SectionRepresentation from "@/components/contact/Representation"
 
 const Region = {
     title: "West",

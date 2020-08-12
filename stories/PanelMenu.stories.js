@@ -32,7 +32,7 @@ export default {
     title: "Doomsday / PanelMenu",
 }
 
-export const PanelMenuDefault = () => ({
+export const Default = () => ({
     components: { PanelMenu },
     data() {
         return {

@@ -1,4 +1,4 @@
-import SectionPress from "@/components/about/SectionPress"
+import SectionPress from "@/components/about/Press"
 
 const Items = [
     {

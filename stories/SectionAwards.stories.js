@@ -1,4 +1,4 @@
-import SectionAwards from "@/components/about/SectionAwards"
+import SectionAwards from "@/components/about/Awards"
 
 const Awards = [
     {
