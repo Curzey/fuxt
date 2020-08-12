@@ -9,6 +9,7 @@
     --color-yellow: #f6d790;
     --color-footer-background: #f7aea8;
     --color-footer-text: #f96447;
+    --color-rpsg: #fdc760; //TODO: rename if re-used
 
     --unit-100vh: 100vh;
     --unit-gutter: 50px;
@@ -16,6 +17,10 @@
 
     --font-primary: "Favorit", sans-serif;
     --font-secondary: "Druk Wide", sans-serif;
+
+    @media #{$lt-phone} {
+        --unit-gutter: 20px;
+    }
 }
 
 // Globals
