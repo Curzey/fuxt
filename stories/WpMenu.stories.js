@@ -2,7 +2,7 @@ import WpMenu from "@/components/WpMenu"
 import API from "@/static/db.json"
 
 export default {
-    title: "WpMenu",
+    title: "WpComponents / WpMenu",
 }
 
 export const Default = () => ({

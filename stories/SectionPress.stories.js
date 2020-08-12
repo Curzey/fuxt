@@ -27,7 +27,7 @@ const Items = [
 ]
 
 export default {
-    title: "SectionPress",
+    title: "Doomsday / SectionPress",
 }
 
 export const Default = () => ({

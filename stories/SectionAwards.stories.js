@@ -44,7 +44,7 @@ const Awards = [
 ]
 
 export default {
-    title: "SectionAwards",
+    title: "Doomsday / SectionAwards",
 }
 
 export const Default = () => ({

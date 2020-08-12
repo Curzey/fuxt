@@ -4,7 +4,7 @@ import API from "@/static/db.json"
 const Items = API.menuItems.nodes.slice(0, 3)
 
 export default {
-    title: "FooterSocials",
+    title: "Doomsday / FooterSocials",
 }
 
 export const Default = () => ({

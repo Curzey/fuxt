@@ -10,7 +10,7 @@ const Region = {
 }
 
 export default {
-    title: "SectionRepresentation",
+    title: "Doomsday / SectionRepresentation",
 }
 
 export const Default = () => ({

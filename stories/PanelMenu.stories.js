@@ -29,7 +29,7 @@ const mainMenu = [
 ]
 
 export default {
-    title: "PanelMenu",
+    title: "Doomsday / PanelMenu",
 }
 
 export const PanelMenuDefault = () => ({

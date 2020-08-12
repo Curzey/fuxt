@@ -1,0 +1,127 @@
+<template>
+    <nuxt-link
+        :to="to"
+        class="block-work"
+    >
+        <div class="block-text">
+            <split-text
+                v-if="title"
+                element="h2"
+                :text="title"
+                class="title"
+                separator=" - "
+            />
+            <p
+                v-if="credit"
+                class="credit"
+            >
+                by {{ credit }}
+            </p>
+        </div>
+        <wp-image
+            class="block-image"
+            :image="image"
+        />
+    </nuxt-link>
+</template>
+
+<script>
+export default {
+    props: {
+        image: {
+            type: Object,
+            default: () => {},
+        },
+        title: {
+            type: String,
+            default: "",
+        },
+        credit: {
+            type: String,
+            default: "",
+        },
+        to: {
+            type: String,
+            default: "",
+        },
+    },
+}
+</script>
+
+<style lang="scss" scoped>
+.block-work {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-left: 50px;
+    box-sizing: border-box;
+
+    // Text
+    .block-text {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 40;
+        transition: transform 0.4s $authenticMotion;
+    }
+    /deep/ .title {
+        display: flex;
+        flex-direction: column;
+
+        margin: 0;
+        font-family: var(--font-secondary);
+        font-weight: 700;
+        .line-1 {
+            font-size: 30px;
+        }
+    }
+    .credit {
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+    // Image
+    .block-image {
+        width: 34%;
+        transform-origin: left;
+        transition: transform 0.4s $authenticMotion;
+    }
+
+    // Hovers
+    @media #{$has-hover} {
+        &:hover {
+            z-index: 30;
+
+            .block-image {
+                transform: scale(1.4);
+            }
+            .block-text {
+                transform: translate(100px, -50%);
+            }
+        }
+    }
+    // Breakpoints
+    @media #{$lt-tablet} {
+        .block-image {
+            width: 50%;
+        }
+    }
+    @media #{$lt-phone} {
+        /deep/ .title {
+            .line-1 {
+                font-size: 25px;
+            }
+            .line-2 {
+                font-size: 15px;
+            }
+        }
+        .credit {
+            font-size: 12px;
+        }
+        .block-image {
+            width: 100%;
+        }
+    }
+}
+</style>

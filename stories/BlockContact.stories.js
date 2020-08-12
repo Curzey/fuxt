@@ -7,7 +7,7 @@ const Contact = {
 }
 
 export default {
-    title: "BlockContact",
+    title: "Doomsday / BlockContact",
 }
 
 export const Default = () => ({

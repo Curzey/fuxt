@@ -2,7 +2,7 @@ import SlideshowWork from "@/components/work/SlideshowWork"
 import API from "@/static/db.json"
 
 export default {
-    title: "SlideshowWork",
+    title: "Doomsday / SlideshowWork",
 }
 
 export const Default = () => ({

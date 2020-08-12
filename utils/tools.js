@@ -4,19 +4,16 @@ import _isUndefined from "lodash/isUndefined"
 /*
  * This function builds out a Date using regaulr JS (not moment.js)
  */
-export const formatDate = date => {
+export const formatDate = (date) => {
     // Safari doesn't like the default WP-GQL date format, so need to replace the space with a T
     // See: https://stackoverflow.com/questions/21883699/safari-javascript-date-nan-issue-yyyy-mm-dd-hhmmss
     const d = new Date(date.replace(/\s/, "T"))
     const year = d.getFullYear()
-    const month = d.toLocaleString("en-us", { month: "long" })
+    const month = ("0" + (d.getMonth() + 1)).slice(-2)
 
-    const day = d
-        .getDate()
-        .toString()
-        .padStart(2, "0")
+    const day = d.getDate().toString().padStart(2, "0")
 
-    return `${month} ${day}, ${year}`
+    return `${month}.${day}.${year}`
 }
 
 /*
@@ -24,7 +21,7 @@ export const formatDate = date => {
  * Will convert ``&amp;#8211;`` into `-` for example.
  */
 export const decodeHtmlEntities = (string = "") => {
-    return string.replace(/&#(\d+);/g, function(match, dec) {
+    return string.replace(/&#(\d+);/g, function (match, dec) {
         return String.fromCharCode(dec)
     })
 }
@@ -32,7 +29,7 @@ export const decodeHtmlEntities = (string = "") => {
 /*
  * This function is used generate "share this" style links.
  */
-export const buildShareLinks = opts => {
+export const buildShareLinks = (opts) => {
     const url = opts.url || ""
     const text = opts.text.replace(/<[^>]*>?/gm, "") || ""
 
@@ -63,7 +60,7 @@ export const buildShareLinks = opts => {
         )}`,
         pinterest: `http://pinterest.com/pin/create/button/?url=${encodeURIComponent(
             url
-        )}&description=${encodeURIComponent(text)}`
+        )}&description=${encodeURIComponent(text)}`,
     }
 }
 
@@ -73,10 +70,10 @@ export const buildShareLinks = opts => {
 export const sortColumns = (items, count = 2) => {
     const buckets = Array(count)
         .fill(0)
-        .map(v => [])
+        .map((v) => [])
     let pointer = 0
 
-    items.forEach(item => {
+    items.forEach((item) => {
         buckets[pointer].push(item)
         pointer = (pointer + 1) % count
     })
@@ -88,7 +85,7 @@ export const sortColumns = (items, count = 2) => {
  * Mimics PHP's nl2br
  * SEE https://www.php.net/manual/en/function.nl2br.php
  */
-export const nl2br = str => {
+export const nl2br = (str) => {
     return str.replace(/(?:\r\n|\r|\n)/g, "<br>")
 }
 
@@ -106,7 +103,7 @@ export function getStripped(obj, path, def = undefined) {
 /*
  * Takes a string and stipes HTML tags from it
  */
-export const stripTags = str => {
+export const stripTags = (str) => {
     return str.replace(/<[^>]*>?/gm, "")
 }
 
@@ -118,15 +115,15 @@ export const initSwipeEvents = (el, deltaMin = 80) => {
         startX: 0,
         startY: 0,
         endX: 0,
-        endY: 0
+        endY: 0,
     }
     let directionEvents = []
-    el.addEventListener("touchstart", e => {
+    el.addEventListener("touchstart", (e) => {
         const t = e.touches[0]
         swipeData.startX = t.screenX
         swipeData.startY = t.screenY
     })
-    el.addEventListener("touchmove", e => {
+    el.addEventListener("touchmove", (e) => {
         const t = e.touches[0]
         swipeData.endX = t.screenX
         swipeData.endY = t.screenY
@@ -144,7 +141,7 @@ export const initSwipeEvents = (el, deltaMin = 80) => {
             else directionEvents.push("up")
         }
 
-        directionEvents.forEach(direction =>
+        directionEvents.forEach((direction) =>
             el.dispatchEvent(new Event(`swipe-${direction}`))
         )
 
@@ -157,8 +154,8 @@ export const initSwipeEvents = (el, deltaMin = 80) => {
  */
 export const _getOne = (obj, paths, defaultValue) => {
     const values = paths
-        .map(path => _get(obj, path))
-        .filter(v => !_isUndefined(v))
+        .map((path) => _get(obj, path))
+        .filter((v) => !_isUndefined(v))
 
     return values.length ? values[0] : defaultValue
 }
