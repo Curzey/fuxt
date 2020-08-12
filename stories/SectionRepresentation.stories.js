@@ -10,7 +10,7 @@ const Region = {
 }
 
 export default {
-    title: "@dchiamp / SectionRepresentation",
+    title: "SectionRepresentation",
 }
 
 export const Default = () => ({

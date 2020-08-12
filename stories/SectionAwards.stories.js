@@ -44,7 +44,7 @@ const Awards = [
 ]
 
 export default {
-    title: "@dchiamp / SectionAwards",
+    title: "SectionAwards",
 }
 
 export const Default = () => ({

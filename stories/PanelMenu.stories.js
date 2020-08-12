@@ -29,7 +29,7 @@ const mainMenu = [
 ]
 
 export default {
-    title: "@austinblanchard / PanelMenu",
+    title: "PanelMenu",
 }
 
 export const PanelMenuDefault = () => ({

@@ -1,5 +1,4 @@
-import BlockContact from "@/components/contact/BlockContact"
-import API from "@/static/db.json"
+import BlockContact from "@/components/block/Contact"
 
 const Contact = {
     name: "Danielle Hinde",
@@ -8,7 +7,7 @@ const Contact = {
 }
 
 export default {
-    title: "@dchiamp / BlockContact",
+    title: "BlockContact",
 }
 
 export const Default = () => ({
